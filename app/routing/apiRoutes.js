@@ -1,10 +1,10 @@
 
-var friendList = require('../data/friends.js');
+var friends = require('../data/friends.js');
 
 module.exports = function(app){
  
   app.get('/api/friends', function(req,res){
-    res.json(friendList);
+    res.json(friends);
   });
 
   app.post('/api/friends', function(req,res){
@@ -48,7 +48,7 @@ module.exports = function(app){
 
       if(totalDifference <= bestMatch.friendDifference) {
         bestMatch.name = friends[i].name;
-        bestMatch.photo = friedns[i].photo;
+        bestMatch.photo = friends[i].photo;
         bestMatch.friendDifference = totalDifference;
       }
       console.log(totalDifference + " Total Difference");

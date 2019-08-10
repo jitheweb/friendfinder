@@ -184,7 +184,7 @@ $(document).ready(function() {
         
             var newFriend = {
                 name: $('#name').val().trim(),
-                profilePic: $('#photo').val().trim(),
+                photo: $('#photo').val().trim(),
                 scores: [
                     $('#q1').val(),
                     $('#q2').val(),
@@ -204,9 +204,9 @@ $(document).ready(function() {
             $.post(currentURL + "/api/friends", newFriend, function(data) {
             
                 $("#matchName").text(data.name);
-                $("#matchPic").attr("src", data.profilePic);
-            });
+                $("#matchPic").attr("src", data.photo);
                 $('.modal').modal();
+            });
             
             $('#name').val("");
             $('#photo').val("");
